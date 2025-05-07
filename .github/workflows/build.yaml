@@ -38,9 +38,23 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: binaries
-          path: |
-            steamgrid.exe
-            steamgrid-arm64.exe
-            steamgrid
-            steamgrid-arm64
+            name: windows-amd64
+            path: steamgrid.exe
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-arm64
+          path: steamgrid-arm64.exe
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-amd64
+          path: steamgrid
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-arm64
+          path: steamgrid-arm64
