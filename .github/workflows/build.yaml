@@ -23,13 +23,14 @@ jobs:
         run: |
           go mod init steamgrid
           go mod tidy
+          mkdir out
       
       - name: Build for Windows
         run: |
-          GOOS=windows GOARCH=amd64 go build -o steamgrid.exe ./cmd/steamgrid
-          GOOS=windows GOARCH=arm64 go build -o steamgrid-arm64.exe ./cmd/steamgrid
+          GOOS=windows GOARCH=amd64 go build -o steamgrid.exe
+          GOOS=windows GOARCH=arm64 go build -o steamgrid-arm64.exe
 
       - name: Build for Linux
         run: |
-          GOOS=linux GOARCH=amd64 go build -o steamgrid ./cmd/steamgrid
-          GOOS=linux GOARCH=arm64 go build -o steamgrid-arm64 ./cmd/steamgrid
+          GOOS=linux GOARCH=amd64 go build -o steamgrid
+          GOOS=linux GOARCH=arm64 go build -o steamgrid-arm64
