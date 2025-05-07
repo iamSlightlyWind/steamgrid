@@ -222,3 +222,6 @@ pip-log.txt
 Steam
 steamgrid*
 __debug_bin
+
+go.mod
+go.sum
